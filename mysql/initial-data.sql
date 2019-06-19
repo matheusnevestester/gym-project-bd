@@ -159,12 +159,12 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `gymdb`.`Agendamento` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `id_aluno` INT NULL,
-  `id_personal` INT NULL,
-  `id_academia` INT NULL,
-  `dia` VARCHAR(45) NULL,
-  `hora` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`),
+  `id_aluno` INT NOT NULL,
+  `id_personal` INT NOT NULL,
+  `id_academia` INT NOT NULL,
+  `dia` VARCHAR(45) NOT NULL,
+  `hora` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`,`id_aluno`,`id_personal`,`id_academia`,`dia`,`hora`),
   INDEX `fk_Agendamento_Aluno_idx` (`id_aluno` ASC),
   INDEX `fk_Agendamento_Personal_idx` (`id_personal` ASC),
   INDEX `fk_Agendamento_Academia_idx` (`id_academia` ASC),
@@ -177,8 +177,8 @@ CREATE TABLE IF NOT EXISTS `gymdb`.`Agendamento` (
     FOREIGN KEY (`id_personal`)
     REFERENCES `gymdb`.`Personal` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-CONSTRAINT `fk_Agendamento_Academia_idx`
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Agendamento_Academia`
     FOREIGN KEY (`id_academia`)
     REFERENCES `gymdb`.`Academia` (`id`)
     ON DELETE NO ACTION
