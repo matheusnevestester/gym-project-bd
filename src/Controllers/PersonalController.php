@@ -30,7 +30,7 @@ namespace App\Controllers;
 
             }
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){

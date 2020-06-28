@@ -58,7 +58,7 @@ namespace App\Controllers;
                 }
             }
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -83,7 +83,7 @@ namespace App\Controllers;
                 $result = $personal->buscarPersonal();
             }
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -100,7 +100,7 @@ namespace App\Controllers;
             $usuario = new Usuario();
             $result = $usuario->buscarAlunos();
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -120,7 +120,7 @@ namespace App\Controllers;
             $usuario = new Usuario($_GET["id_usuario"]);
             $result = $usuario->buscarUsuarioPorTipo($_GET["tipo"]);
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -155,7 +155,7 @@ namespace App\Controllers;
                 }
             }
 
-            $return = mb_convert_encoding($return,"UTF-8","auto");
+            //$return = mb_convert_encoding($return,"UTF-8","auto");
             $return = json_encode($return, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -174,7 +174,7 @@ namespace App\Controllers;
             $usuario = new Usuario($_POST["id_usuario"]);
             $result = $usuario->deletarUsuario();
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){

@@ -3,7 +3,7 @@ version: "3.4"
 services:
     
     gym_php:
-        image: php-es2:latest
+        image: php:testebd
         volumes:
             - type: bind
               source: ./
@@ -15,7 +15,7 @@ services:
                 parallelism: 1
                 order: start-first
         networks:
-            main:
+            es2_default:
                 aliases:
                     - gym_php
     gym_nginx:
@@ -40,7 +40,7 @@ services:
                 parallelism: 1
                 order: start-first
         networks:
-            main:
+            es2_default:
                 aliases:
                     - gym_nginx
     mysql:
@@ -54,5 +54,5 @@ services:
         environment:
             - MYSQL_ALLOW_EMPTY_PASSWORD=true
 networks:
-    main:
+    es2_default:
         external: true

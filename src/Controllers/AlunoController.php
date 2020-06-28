@@ -15,7 +15,7 @@ namespace App\Controllers;
             $agendamento = new Agendamento();
             $result = $agendamento->novoAgendamento($_POST);
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -35,7 +35,7 @@ namespace App\Controllers;
             $result = $agendamento->buscarAgendamento($_GET["tipo"], $_GET["id"]);
 
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){

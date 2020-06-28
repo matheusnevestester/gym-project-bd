@@ -12,7 +12,7 @@ namespace Components\Database;
     class MySqlConnector{
 
         protected $conn;
-        private $conString = "mysql:host=%s;port=%s;dbname=%s";
+        private $conString = "mysql:127.0.0.1=%s;port=3307;dbname=gymdb";
         
         function __construct(){
             $this->connect();
@@ -28,8 +28,10 @@ namespace Components\Database;
                 $set['database']
             );
 
-            $this->conn = mysqli_connect($set['host'],$set['user'], $set['password'], $set['database'], $set['port']);
-
+            $this->conn = mysqli_connect('mysql','root','','gymdb','3306');
+            if (mysqli_connect_errno($this->$conn)) {
+                echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
 //            $this->conn = new \PDO(
 //                $conString,
 //                $set['user'],

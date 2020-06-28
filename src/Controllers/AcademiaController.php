@@ -16,7 +16,7 @@ namespace App\Controllers;
             $result = $academia->novoAcademia($_POST);
 
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -35,7 +35,7 @@ namespace App\Controllers;
             $academia = new Academia($_GET["id_academia"]);
             $result = $academia->buscarAcademia();
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -51,7 +51,7 @@ namespace App\Controllers;
 
             $result = $academia->mostrarAcademias();
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -70,7 +70,7 @@ namespace App\Controllers;
             $academia = new Academia($_POST["id_academia"]);
             $result = $academia->deletarAcademia();
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
