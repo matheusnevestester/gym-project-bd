@@ -162,3 +162,111 @@ VALUES
         '5 AM',
         '1 AM'
         );
+
+INSERT INTO Aparelhos (
+    nome,
+    musculo,
+    identificacao
+
+)
+VALUES
+    (
+		'Supino',
+		'Peito',
+		'1A'
+    ),
+    (
+		'Peso 15 kg',
+		'Biceps/Triceps',
+		'3T'
+    ),
+    (
+		'Adutor',
+		'Pernas',
+		'6R'
+    ),
+    (
+		'Peso 20 kg',
+		'Biceps/Triceps',
+		'4T'
+    );
+
+INSERT INTO Exercicio (
+    nome,
+    series,
+    repeticoes,
+    descanso,
+    maquina
+
+)
+VALUES
+    (
+		'Supino Reto',
+		'4',
+		'5',
+        '10',
+        '1'
+
+    ),
+    (
+		'Supino Inclinado',
+		'2',
+		'3',
+        '15',
+        '1'
+    ),
+    (
+		'Adutor',
+		'4',
+		'5',
+        '15',
+        '3'
+    );
+
+I
+
+
+INSERT INTO Treino (
+    id_exercicio,
+    dia,
+    ordem,
+    id_aluno
+)
+
+VALUES
+    (
+		'1',
+		'03/07/2020',
+		'2',
+        '1'
+    ),
+    (
+		'3',
+		'05/07/2020',
+		'3',
+        '1'
+    ),
+    (
+		'3',
+		'29/06/2020',
+		'2',
+        '2'
+    );
+
+INSERT INTO Agendamento (
+    id_aluno,
+    id_personal,
+    id_academia,
+    dia,
+    hora
+)
+
+VALUES
+    (
+		'2',
+		'2',
+		'2',
+        '10/09/2020',
+        '7 PM'
+    );
+
