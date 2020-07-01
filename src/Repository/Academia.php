@@ -39,22 +39,9 @@ class Academia{
             'cep'=>$data['cep'],
             'telefone'=>$data['telefone'],
             'email'=>$data['email'],
-            'seg_inicio'=>$data['seg_inicio'],
-            'seg_fim'=>$data['seg_fim'],
-            'ter_inicio'=>$data['ter_inicio'],
-            'ter_fim'=>$data['ter_fim'],
-            'qua_inicio'=>$data['qua_inicio'],
-            'qua_fim'=>$data['qua_fim'],
-            'qui_inicio'=>$data['qui_inicio'],
-            'qui_fim'=>$data['qui_fim'],
-            'sex_inicio'=>$data['sex_inicio'],
-            'sex_fim'=>$data['sex_fim'],
-            'sab_inicio'=>$data['sab_inicio'],
-            'sab_fim'=>$data['sab_fim'],
-            'dom_inicio'=>$data['dom_inicio'],
-            'dom_fim'=>$data['dom_fim'],
-            'feriado_inicio'=>$data['feriado_inicio'],
-            'feriado_fim'=>$data['feriado_fim'],
+            'horario_abre'=>$data['horario_abre'],
+            'horario_fecha'=>$data['horario_fecha'],
+    
         );
 
         $mysql = new MySql();

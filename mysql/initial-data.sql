@@ -78,22 +78,8 @@ CREATE TABLE IF NOT EXISTS `gymdb`.`Academia` (
   `cep` VARCHAR(45) NULL,
   `telefone` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
-  `seg_inicio` VARCHAR(45) NULL,
-  `seg_fim` VARCHAR(45) NULL,
-  `ter_inicio` VARCHAR(45) NULL,
-  `ter_fim` VARCHAR(45) NULL,
-  `qua_inicio` VARCHAR(45) NULL,
-  `qua_fim` VARCHAR(45) NULL,
-  `qui_inicio` VARCHAR(45) NULL,
-  `qui_fim` VARCHAR(45) NULL,
-  `sex_inicio` VARCHAR(45) NULL,
-  `sex_fim` VARCHAR(45) NULL,
-  `sab_inicio` VARCHAR(45) NULL,
-  `sab_fim` VARCHAR(45) NULL,
-  `dom_inicio` VARCHAR(45) NULL,
-  `dom_fim` VARCHAR(45) NULL,
-  `feriado_inicio` VARCHAR(45) NULL,
-  `feriado_fim` VARCHAR(45) NULL,
+  `horario_abre` VARCHAR(45) NULL,
+  `horario_fecha` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -183,4 +169,26 @@ CREATE TABLE IF NOT EXISTS `gymdb`.`Agendamento` (
     REFERENCES `gymdb`.`Academia` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `gymdb`.`UsuarioAcademia`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `gymdb`.`UsuarioAcademia` (
+  `id_academia` INT NOT NULL,
+  `id_usuario` INT NOT NULL,
+  PRIMARY KEY (`id_usuario`,`id_academia`),
+  INDEX `fk_UsuarioAcademia_Usuario_idx` (`id_usuario` ASC),
+  INDEX `fk_UsuarioAcademia_Academia_idx` (`id_academia` ASC),
+  CONSTRAINT `fk_UsuarioAcademia_Usuario`
+    FOREIGN KEY (`id_usuario`)
+    REFERENCES `gymdb`.`Usuario` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_UsuarioAcademia_Academia`
+    FOREIGN KEY (`id_academia`)
+    REFERENCES `gymdb`.`Academia` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,)
 ENGINE = InnoDB;

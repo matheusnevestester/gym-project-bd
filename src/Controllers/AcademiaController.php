@@ -8,7 +8,7 @@ namespace App\Controllers;
     class AcademiaController extends ControllerManager{
 
         public function criarAcademia(){
-            if (!$this->checkRequest($this->post, array("nome", "rua", "numero", "cidade", "estado", "cep", "telefone", "email", "seg_inicio", "seg_fim", "ter_inicio", "ter_fim", "qua_inicio", "qua_fim", "qui_inicio", "qui_fim", "sex_inicio", "sex_fim", "sab_inicio", "sab_fim", "dom_inicio", "dom_fim", "feriado_inicio", "feriado_fim"))){
+            if (!$this->checkRequest($this->post, array("nome", "rua", "numero", "cidade", "estado", "cep", "telefone", "email", "horario_abre", "horario_fecha" ))){
                 return $this->badRequest();
             }
 

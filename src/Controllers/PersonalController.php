@@ -49,7 +49,7 @@ namespace App\Controllers;
             $exercicio = new Exercicio($_GET["id_exercicio"]);
             $result = $exercicio->buscarExercicio();
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -65,7 +65,7 @@ namespace App\Controllers;
 
             $result = $exercicio->mostrarExercicios();
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -84,7 +84,7 @@ namespace App\Controllers;
             $exercicio = new Exercicio($_POST["id_exercicio"]);
             $result = $exercicio->deletarExercicio();
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -105,7 +105,7 @@ namespace App\Controllers;
             $aparelho = new Aparelho($_GET["id_aparelho"]);
             $result = $aparelho->buscarAparelho();
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -121,7 +121,7 @@ namespace App\Controllers;
 
             $result = $aparelho->mostrarAparelhos();
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -145,7 +145,7 @@ namespace App\Controllers;
                 $result = $aparelho->novoAparelho($_POST);
             }
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -164,7 +164,7 @@ namespace App\Controllers;
             $aparelho = new Aparelho($_POST["id_aparelho"]);
             $result = $aparelho->deletarAparelho();
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -192,7 +192,7 @@ namespace App\Controllers;
                 }
             }
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -211,7 +211,7 @@ namespace App\Controllers;
             $treino = new Treino();
             $result = $treino->deletarTreino($_POST);
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){
@@ -230,7 +230,7 @@ namespace App\Controllers;
             $treino = new Treino();
             $result = $treino->buscarTreinoPorAluno($_GET["id_aluno"]);
 
-            $result = mb_convert_encoding($result,"UTF-8","auto");
+            //$result = mb_convert_encoding($result,"UTF-8","auto");
             $return = json_encode($result, JSON_UNESCAPED_UNICODE);
 
             if ($return){

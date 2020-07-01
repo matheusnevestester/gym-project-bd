@@ -9,7 +9,7 @@ namespace App\Controllers;
 
     class AccountController extends ControllerManager{
     
-        public function criarUsuario(){
+        public function ario(){
             $result = [];
 
             if (!$this->checkRequest($this->post, array("nome", "sobrenome", "email", "senha", "telefone", "rua", "numero", "cep", "cidade", "estado", "sexo"))){
